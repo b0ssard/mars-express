@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface InputCustomProps {
   label: string;
@@ -8,16 +8,29 @@ interface InputCustomProps {
   length?: number;
 }
 
-const InputCustom: React.FC<InputCustomProps> = ({
+function InputCustom({
   label,
   id,
+  length,
   placeholder,
   required = false,
-  length,
-}) => {
+}: InputCustomProps) {
+  const [error, setError] = useState<string>("");
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const newValue = event.target.value;
+    if (length && newValue.length !== length) {
+      setError(
+        `O ${label.toLowerCase()} deve ter exatamente ${length} caracteres.`
+      );
+    } else {
+      setError("");
+    }
+  }
+
   return (
     <div className="max-w-sm mx-auto">
-      <div className="mb-3">
+      <div className="mb-3 relative">
         <label htmlFor={id} className="block font-semibold mb-2">
           {label}
         </label>
@@ -29,11 +42,23 @@ const InputCustom: React.FC<InputCustomProps> = ({
           placeholder={placeholder}
           aria-label={label}
           required={required}
+          minLength={length}
           maxLength={length}
+          onChange={handleChange}
         />
+        {error && (
+          <span className="absolute bottom-0 left-0 text-sm text-red-500">
+            {error}
+          </span>
+        )}
+        {!required && (
+          <span className="absolute bottom-0 right-0 text-sm text-gray-300">
+            Opcional
+          </span>
+        )}
       </div>
     </div>
   );
-};
+}
 
 export default InputCustom;
