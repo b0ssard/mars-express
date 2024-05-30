@@ -1,4 +1,5 @@
 import InputCustom from "./Input";
+import RadioGroup from "./InputRadio";
 
 interface TipoPessoaRadioProps {
   tipoPessoa: string;
@@ -41,35 +42,17 @@ export default function TipoPessoaRadio({
   tipoPessoa,
   setTipoPessoa,
 }: TipoPessoaRadioProps) {
+  const options = [
+    { label: "Pessoa Física", value: "PF" },
+    { label: "Empresa", value: "PJ" },
+  ];
+
   return (
-    <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2">
-        Tipo de Pessoa
-      </label>
-      <div className="flex">
-        <label className="mr-4">
-          <input
-            type="radio"
-            name="tipoPessoa"
-            value="PF"
-            checked={tipoPessoa === "PF"}
-            onChange={() => setTipoPessoa("PF")}
-            className="mr-1"
-          />
-          Pessoa Física
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="tipoPessoa"
-            value="PJ"
-            checked={tipoPessoa === "PJ"}
-            onChange={() => setTipoPessoa("PJ")}
-            className="mr-1"
-          />
-          Empresa
-        </label>
-      </div>
-    </div>
+    <RadioGroup
+      name="Tipo de Pessoa"
+      options={options}
+      selectedValue={tipoPessoa}
+      onChange={setTipoPessoa}
+    />
   );
 }
