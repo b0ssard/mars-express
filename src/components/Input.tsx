@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 interface InputCustomProps {
   label: string;
   id: string;
@@ -15,19 +13,6 @@ function InputCustom({
   placeholder,
   required = false,
 }: InputCustomProps) {
-  const [error, setError] = useState<string>("");
-
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const newValue = event.target.value;
-    if (length && newValue.length !== length) {
-      setError(
-        `O ${label.toLowerCase()} deve ter exatamente ${length} caracteres.`
-      );
-    } else {
-      setError("");
-    }
-  }
-
   return (
     <div className="max-w-sm mx-auto">
       <div className="mb-3 relative">
@@ -35,22 +20,16 @@ function InputCustom({
           {label}
         </label>
         <input
-          type="text"
           name={id}
           id={id}
-          className="shadow-md hover:shadow-xl appearance-none border rounded w-full py-2 px-3 text-stone-900 leading-tight focus:outline-none"
+          className="shadow-md hover:shadow-xl placeholder:text-s font-mono appearance-none border rounded w-full py-2 px-3 text-stone-900 leading-tight focus:outline-none"
           placeholder={placeholder}
           aria-label={label}
           required={required}
           minLength={length}
           maxLength={length}
-          onChange={handleChange}
         />
-        {error && (
-          <span className="absolute bottom-0 left-0 text-sm text-red-500">
-            {error}
-          </span>
-        )}
+
         {!required && (
           <span className="absolute bottom-0 right-0 text-sm text-gray-300">
             Opcional
