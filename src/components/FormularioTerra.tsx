@@ -11,6 +11,13 @@ export default function EndereçoTerra() {
       className: "w-24 sm:col-span-2",
     },
     {
+      label: "Nome endereço",
+      id: "nome",
+      placeholder: "Casa, trabalho, outro?",
+      required: true,
+      className: "w-80 sm:col-span-2",
+    },
+    {
       label: "Logradouro",
       id: "logradouro",
       placeholder: "Digite o logradouro",
@@ -20,7 +27,7 @@ export default function EndereçoTerra() {
     {
       label: "Número",
       id: "numero",
-      placeholder: "Digite o número",
+      placeholder: "",
       required: true,
       className: "w-20",
     },

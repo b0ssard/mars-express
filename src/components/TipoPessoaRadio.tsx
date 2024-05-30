@@ -34,6 +34,11 @@ export function PessoaJuridicaForm() {
         placeholder="Digite o nome da empresa"
         required
       />
+      <InputCustom
+        label="Responsável"
+        id="responsável"
+        placeholder="Quem deverá receber ou enviar?"
+      />
     </div>
   );
 }
@@ -49,9 +54,8 @@ export default function TipoPessoaRadio({
 
   return (
     <>
-      <h2>Informações de Tipo de Pessoa</h2>
+      <h2>Quem receberá?</h2>
       <RadioGroup
-        name="Tipo de Pessoa"
         options={options}
         selectedValue={tipoPessoa}
         onChange={setTipoPessoa}

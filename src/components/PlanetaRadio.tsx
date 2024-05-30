@@ -16,7 +16,7 @@ export default function PlanetaRadio({
 
   return (
     <>
-      <h2>Informações do Planeta</h2>
+      <h2>Para qual planeta deseja enviar?</h2>
       <RadioGroup
         name="Escolha o Planeta"
         options={options}

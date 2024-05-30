@@ -9,11 +9,6 @@ export default function EndereçoMarte() {
       required: true,
     },
     {
-      label: "Responsável",
-      id: "responsável",
-      placeholder: "Digite o nome do responsável",
-    },
-    {
       label: "Localização",
       id: "local",
       placeholder: "Digite o código do lote",

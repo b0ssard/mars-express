@@ -1,5 +1,5 @@
 interface RadioGroupProps {
-  name: string;
+  name?: string;
   options: { label: string; value: string }[];
   selectedValue: string;
   onChange: (value: string) => void;

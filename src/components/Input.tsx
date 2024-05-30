@@ -6,7 +6,7 @@ interface InputCustomProps {
   length?: number;
 }
 
-function InputCustom({
+export default function InputCustom({
   label,
   id,
   length,
@@ -39,5 +39,3 @@ function InputCustom({
     </div>
   );
 }
-
-export default InputCustom;
