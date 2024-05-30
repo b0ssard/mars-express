@@ -1,12 +1,9 @@
-import Botão from "./Botão";
 import InputCustom from "./Input";
 
 export default function EndereçoTerra() {
   return (
-    <form className="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-md mt-5">
-      <h2 className="text-2xl font-bold mb-6 font-mono text-center">
-        Endereço na Terra
-      </h2>
+    <form>
+      <h2>Endereço na Terra</h2>
 
       <div className="grid sm:grid-cols-2 gap-6">
         <div className=" w-24 col-span-1 sm:col-span-2 ">
@@ -73,7 +70,7 @@ export default function EndereçoTerra() {
       </div>
 
       <div className="flex justify-end mt-6">
-        <Botão label="Enviar" />
+        <button>Enviar</button>{" "}
       </div>
     </form>
   );

@@ -1,10 +1,9 @@
-import Botão from "./Botão";
 import InputCustom from "./Input";
 
 export default function EndereçoMarte() {
   return (
-    <form className="max-w-md mx-auto p-4 shadow-lg rounded-md mt-5">
-      <h2 className="text-2xl font-bold mb-4 font-mono">Endereço em Marte</h2>
+    <form>
+      <h2>Endereço em Marte</h2>
       <div className="mb-4">
         <InputCustom
           label="Nome do local"
@@ -30,7 +29,7 @@ export default function EndereçoMarte() {
         />
       </div>
       <div className="flex justify-end">
-        <Botão label="Enviar" />
+        <button>Enviar</button>{" "}
       </div>
     </form>
   );
