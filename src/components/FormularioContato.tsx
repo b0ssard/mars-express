@@ -18,7 +18,7 @@ export default function ContatoForm() {
   ];
 
   return (
-    <div className="grid sm:grid-cols-2 gap-6">
+    <div className=" sm:grid-cols-2 gap-6">
       {inputs.map((input) => (
         <InputCustom
           key={input.id}

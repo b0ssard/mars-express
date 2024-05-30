@@ -49,7 +49,7 @@ export default function EndereçoTerra() {
   ];
 
   return (
-    <form>
+    <>
       <h2>Endereço na Terra</h2>
 
       <div className="grid sm:grid-cols-2 gap-6">
@@ -67,6 +67,6 @@ export default function EndereçoTerra() {
       </div>
 
       <div className="flex justify-end mt-6"></div>
-    </form>
+    </>
   );
 }

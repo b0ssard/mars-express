@@ -48,11 +48,14 @@ export default function TipoPessoaRadio({
   ];
 
   return (
-    <RadioGroup
-      name="Tipo de Pessoa"
-      options={options}
-      selectedValue={tipoPessoa}
-      onChange={setTipoPessoa}
-    />
+    <>
+      <h2>Informações de Tipo de Pessoa</h2>
+      <RadioGroup
+        name="Tipo de Pessoa"
+        options={options}
+        selectedValue={tipoPessoa}
+        onChange={setTipoPessoa}
+      />
+    </>
   );
 }

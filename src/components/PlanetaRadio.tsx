@@ -15,11 +15,14 @@ export default function PlanetaRadio({
   ];
 
   return (
-    <RadioGroup
-      name="Escolha o Planeta"
-      options={options}
-      selectedValue={planeta}
-      onChange={setPlaneta}
-    />
+    <>
+      <h2>Informações do Planeta</h2>
+      <RadioGroup
+        name="Escolha o Planeta"
+        options={options}
+        selectedValue={planeta}
+        onChange={setPlaneta}
+      />
+    </>
   );
 }

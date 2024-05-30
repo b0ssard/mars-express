@@ -23,7 +23,7 @@ export default function EndereçoMarte() {
   ];
 
   return (
-    <form>
+    <>
       <h2>Endereço em Marte</h2>
       {campos.map((campo) => (
         <div className="mb-4" key={campo.id}>
@@ -37,6 +37,6 @@ export default function EndereçoMarte() {
         </div>
       ))}
       <div className="flex justify-end"></div>
-    </form>
+    </>
   );
 }
